@@ -19,8 +19,16 @@ const typeDefs = gql`
         itemName: String!
         price: Int!
     }
+
+    input  updateOrderInput {
+        userName: String
+        itemName: String
+        price: Int
+    }
+    
     type Mutation {
-        createOrder(details:OrderInput): Order
+        createOrder(details:OrderInput): Order,
+        updateOrder(details: updateOrderInput,id: ID): Order
     }
 `
 
