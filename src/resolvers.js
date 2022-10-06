@@ -4,6 +4,16 @@ const resolvers =  {
     Query: {
         hello: () => {
             return 'hello Graphql Got'
+        },
+        getOrders: async () => {
+            const order = await OrderModel.find({})
+
+            return order
+        },
+        getSingleOrder: async (parent ,{id}, context,info) => {
+            const singleOrder = await OrderModel.findById(id)
+
+            return singleOrder
         }
     },
     Mutation: {
@@ -16,7 +26,7 @@ const resolvers =  {
             })
 
             return order
-        }
+        },
     }
 }
 

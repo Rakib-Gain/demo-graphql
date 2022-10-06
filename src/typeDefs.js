@@ -9,7 +9,9 @@ const typeDefs = gql`
         price: Int!
     }
     type Query {
-        hello: String
+        hello: String,
+        getOrders: [Order],
+        getSingleOrder(id: ID): Order
     }
     
     input  OrderInput {
