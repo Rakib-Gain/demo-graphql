@@ -55,6 +55,11 @@ const resolvers =  {
             const updatedOrder = OrderModel.findById(id)
 
             return updatedOrder
+        },
+        deleteOrder: async (parent ,{id}, context,info) => {
+            await OrderModel.findByIdAndDelete(id)
+
+            return 'Order delete'
         }
     }
 }

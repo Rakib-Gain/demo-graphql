@@ -29,6 +29,7 @@ const typeDefs = gql`
     type Mutation {
         createOrder(details:OrderInput): Order,
         updateOrder(details: updateOrderInput,id: ID): Order
+        deleteOrder(id: ID): String
     }
 `
 
